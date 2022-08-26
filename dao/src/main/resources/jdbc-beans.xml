@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+  http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <context:property-placeholder location="file:../config/db.properties" ignore-unresolvable="true"/>
+
+    <bean id="dataSource1" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="url" value="jdbc:mysql://b8e3c71a38b2ed:afc1047a@us-cdbr-east-05.cleardb.net/heroku_7f0bff37433c51a"/>
+        <property name="username" value="b8e3c71a38b2ed"/>
+        <property name="password" value="afc1047a"/>
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+    </bean>
+
+    <bean id="multiJDBC1" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource1"/>
+    </bean>
+
+    <bean id="dataSource2" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="url" value="jdbc:mysql://b8e3c71a38b2ed:afc1047a@us-cdbr-east-05.cleardb.net/heroku_7f0bff37433c51a"/>
+        <property name="username" value="b8e3c71a38b2ed"/>
+        <property name="password" value="afc1047a"/>
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+    </bean>
+
+    <bean id="multiJDBC2" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource2"/>
+    </bean>
+
+
+
+</beans>
