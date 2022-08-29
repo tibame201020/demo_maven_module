@@ -5,15 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.jeff</groupId>
-        <artifactId>batchParent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <groupId>myself</groupId>
+        <artifactId>custom_parent</artifactId>
+        <version>1.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <groupId>org.jeff.demo</groupId>
-    <artifactId>dao</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>dao</name>
+    <groupId>myself</groupId>
+    <artifactId>custom_dao</artifactId>
+    <version>1.0.0</version>
+    <name>custom_dao</name>
 
     <dependencies>
         <dependency>
@@ -30,28 +30,8 @@
 
 
         <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>${commons-lang.version}</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context-support</artifactId>
-            <version>${spring-context-support.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>${gson.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jeff.demo</groupId>
-            <artifactId>util</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>myself</groupId>
+            <artifactId>custom_util</artifactId>
         </dependency>
 
 

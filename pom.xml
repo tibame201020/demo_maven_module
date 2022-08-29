@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>org.jeff</groupId>
-    <artifactId>batchParent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <groupId>myself</groupId>
+    <artifactId>custom_parent</artifactId>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -25,10 +25,45 @@
         <commons-lang.version>2.6</commons-lang.version>
         <velocity-engine-core.version>2.3</velocity-engine-core.version>
         <spring-context-support.version>3.0.6.RELEASE</spring-context-support.version>
-        <mail.version>1.5.0-b01</mail.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
         <gson.version>2.8.5</gson.version>
+        <custom_util.version>1.0.0</custom_util.version>
+        <custom_dao.version>1.0.0</custom_dao.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>myself</groupId>
+                <artifactId>custom_util</artifactId>
+                <version>${custom_util.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>myself</groupId>
+                <artifactId>custom_dao</artifactId>
+                <version>${custom_dao.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons-lang.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${spring-context-support.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
 
 
 </project>

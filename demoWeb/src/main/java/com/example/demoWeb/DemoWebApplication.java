@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Import;
 @Import({DaoImpl.class, JdbcBeans.class})
 public class DemoWebApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoWebApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(DemoWebApplication.class, args);
+    }
 
 }

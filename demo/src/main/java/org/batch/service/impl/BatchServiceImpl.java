@@ -19,8 +19,8 @@ public class BatchServiceImpl implements BatchService {
         String sql = "select * from article";
         List<Map<String, Object>> dataLs = dao.query(sql, null, Persistence.TESTMULTIDB1);
         for (Map<String, Object> dataMap : dataLs) {
-            for (String key:
-                 dataMap.keySet()) {
+            for (String key :
+                    dataMap.keySet()) {
                 System.out.println(key + " = " + dataMap.get(key));
             }
         }

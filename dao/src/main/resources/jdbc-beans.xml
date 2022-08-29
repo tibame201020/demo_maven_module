@@ -9,7 +9,7 @@
 
 
     <context:property-placeholder location="classpath:dataSource.properties" ignore-unresolvable="true"/>
-    
+
     <bean id="testMultiDb3" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="url" value="${testMultiDb3.url}"/>
         <property name="username" value="${testMultiDb3.username}"/>
