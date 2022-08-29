@@ -9,58 +9,34 @@
 
 
     <context:property-placeholder location="classpath:dataSource.properties" ignore-unresolvable="true"/>
-
-
-    <bean id="testMultiDb3_Hikari" class="com.zaxxer.hikari.HikariConfig">
-        <property name="dataSourceClassName" value="${testMultiDb3.driver}"/>
-        <property name="dataSourceProperties">
-            <props>
-                <prop key="url">${testMultiDb3.url}</prop>
-                <prop key="user">${testMultiDb3.username}</prop>
-                <prop key="password">${testMultiDb3.password}</prop>
-            </props>
-        </property>
-    </bean>
-    <bean id="testMultiDb3" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
-        <constructor-arg ref="testMultiDb3_Hikari"/>
+    
+    <bean id="testMultiDb3" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="url" value="${testMultiDb3.url}"/>
+        <property name="username" value="${testMultiDb3.username}"/>
+        <property name="password" value="${testMultiDb3.password}"/>
+        <property name="driverClassName" value="${testMultiDb3.driver}"/>
     </bean>
 
     <bean id="testMultiDb3Jdbc" class="org.springframework.jdbc.core.JdbcTemplate">
         <property name="dataSource" ref="testMultiDb3"/>
     </bean>
 
-
-    <bean id="testMultiDb2_Hikari" class="com.zaxxer.hikari.HikariConfig">
-        <property name="dataSourceClassName" value="${testMultiDb2.driver}"/>
-        <property name="dataSourceProperties">
-            <props>
-                <prop key="url">${testMultiDb2.url}</prop>
-                <prop key="user">${testMultiDb2.username}</prop>
-                <prop key="password">${testMultiDb2.password}</prop>
-            </props>
-        </property>
-    </bean>
-    <bean id="testMultiDb2" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
-        <constructor-arg ref="testMultiDb2_Hikari"/>
+    <bean id="testMultiDb2" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="url" value="${testMultiDb2.url}"/>
+        <property name="username" value="${testMultiDb2.username}"/>
+        <property name="password" value="${testMultiDb2.password}"/>
+        <property name="driverClassName" value="${testMultiDb2.driver}"/>
     </bean>
 
     <bean id="testMultiDb2Jdbc" class="org.springframework.jdbc.core.JdbcTemplate">
         <property name="dataSource" ref="testMultiDb2"/>
     </bean>
 
-
-    <bean id="testMultiDb1_Hikari" class="com.zaxxer.hikari.HikariConfig">
-        <property name="dataSourceClassName" value="${testMultiDb1.driver}"/>
-        <property name="dataSourceProperties">
-            <props>
-                <prop key="url">${testMultiDb1.url}</prop>
-                <prop key="user">${testMultiDb1.username}</prop>
-                <prop key="password">${testMultiDb1.password}</prop>
-            </props>
-        </property>
-    </bean>
-    <bean id="testMultiDb1" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
-        <constructor-arg ref="testMultiDb1_Hikari"/>
+    <bean id="testMultiDb1" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="url" value="${testMultiDb1.url}"/>
+        <property name="username" value="${testMultiDb1.username}"/>
+        <property name="password" value="${testMultiDb1.password}"/>
+        <property name="driverClassName" value="${testMultiDb1.driver}"/>
     </bean>
 
     <bean id="testMultiDb1Jdbc" class="org.springframework.jdbc.core.JdbcTemplate">

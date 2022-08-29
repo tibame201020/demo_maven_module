@@ -17,6 +17,7 @@ public class BatchServiceImpl implements BatchService {
     @Override
     public void updateSession() {
         String sql = "select * from article";
+        System.out.println(Persistence.TESTMULTIDB1.getValue().getDataSource().getClass());
         List<Map<String, Object>> dataLs = dao.query(sql, null, Persistence.TESTMULTIDB1);
         for (Map<String, Object> dataMap : dataLs) {
             for (String key :
