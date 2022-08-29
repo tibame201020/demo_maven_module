@@ -4,22 +4,22 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 public enum Persistence {
 
-    DATABASE3 {
+    DB1 {
         @Override
         public JdbcTemplate getValue() {
-            return JdbcBeans.getDatabase3Jdbc();
+            return JdbcBeans.getDb1Jdbc();
         }
     },
-    DATABASE2 {
+    DB3 {
         @Override
         public JdbcTemplate getValue() {
-            return JdbcBeans.getDatabase2Jdbc();
+            return JdbcBeans.getDb3Jdbc();
         }
     },
-    DATABASE1 {
+    DB2 {
         @Override
         public JdbcTemplate getValue() {
-            return JdbcBeans.getDatabase1Jdbc();
+            return JdbcBeans.getDb2Jdbc();
         }
     };
 

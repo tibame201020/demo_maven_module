@@ -17,7 +17,6 @@
     <modules>
         <module>util</module>
         <module>dao</module>
-        <module>demo</module>
     </modules>
 
     <properties>

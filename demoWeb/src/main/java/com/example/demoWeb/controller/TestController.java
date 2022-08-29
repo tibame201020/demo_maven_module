@@ -21,6 +21,6 @@ public class TestController {
         String sql = "select * from Stock_Data";
 
 
-        return dao.query(sql, null, Persistence.DB1);
+        return dao.query(sql, null, Persistence.DATABASE3);
     }
 }

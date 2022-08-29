@@ -10,37 +10,37 @@ import org.springframework.jdbc.core.JdbcTemplate;
 @ImportResource("classpath:jdbc-beans.xml")
 public class JdbcBeans {
     
-    private static JdbcTemplate database3Jdbc;
+    private static JdbcTemplate db1Jdbc;
 
-    public static JdbcTemplate getDatabase3Jdbc() {
-        return database3Jdbc;
+    public static JdbcTemplate getDb1Jdbc() {
+        return db1Jdbc;
     }
 
     @Autowired
-    public void setDatabase3Jdbc(@Qualifier("database3Jdbc") JdbcTemplate database3Jdbc) {
-        JdbcBeans.database3Jdbc = database3Jdbc;
+    public void setDb1Jdbc(@Qualifier("db1Jdbc") JdbcTemplate db1Jdbc) {
+        JdbcBeans.db1Jdbc = db1Jdbc;
     }
 
-    private static JdbcTemplate database2Jdbc;
+    private static JdbcTemplate db3Jdbc;
 
-    public static JdbcTemplate getDatabase2Jdbc() {
-        return database2Jdbc;
-    }
-
-    @Autowired
-    public void setDatabase2Jdbc(@Qualifier("database2Jdbc") JdbcTemplate database2Jdbc) {
-        JdbcBeans.database2Jdbc = database2Jdbc;
-    }
-
-    private static JdbcTemplate database1Jdbc;
-
-    public static JdbcTemplate getDatabase1Jdbc() {
-        return database1Jdbc;
+    public static JdbcTemplate getDb3Jdbc() {
+        return db3Jdbc;
     }
 
     @Autowired
-    public void setDatabase1Jdbc(@Qualifier("database1Jdbc") JdbcTemplate database1Jdbc) {
-        JdbcBeans.database1Jdbc = database1Jdbc;
+    public void setDb3Jdbc(@Qualifier("db3Jdbc") JdbcTemplate db3Jdbc) {
+        JdbcBeans.db3Jdbc = db3Jdbc;
+    }
+
+    private static JdbcTemplate db2Jdbc;
+
+    public static JdbcTemplate getDb2Jdbc() {
+        return db2Jdbc;
+    }
+
+    @Autowired
+    public void setDb2Jdbc(@Qualifier("db2Jdbc") JdbcTemplate db2Jdbc) {
+        JdbcBeans.db2Jdbc = db2Jdbc;
     }
 
 }
