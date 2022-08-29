@@ -9,26 +9,39 @@ import org.springframework.jdbc.core.JdbcTemplate;
 @Configuration
 @ImportResource("classpath:jdbc-beans.xml")
 public class JdbcBeans {
-    private static JdbcTemplate multiJDBC1;
-    private static JdbcTemplate multiJDBC2;
+    
+    private static JdbcTemplate database3Jdbc;
 
-
-    public static JdbcTemplate getMultiJDBC1() {
-        return multiJDBC1;
+    public static JdbcTemplate getDatabase3Jdbc() {
+        return database3Jdbc;
     }
 
     @Autowired
-    public void setMultiJDBC1(@Qualifier("multiJDBC1") JdbcTemplate multiJDBC1) {
-        JdbcBeans.multiJDBC1 = multiJDBC1;
+    public void setDatabase3Jdbc(@Qualifier("database3Jdbc") JdbcTemplate database3Jdbc) {
+        JdbcBeans.database3Jdbc = database3Jdbc;
     }
 
-    public static JdbcTemplate getMultiJDBC2() {
-        return multiJDBC2;
+    private static JdbcTemplate database2Jdbc;
+
+    public static JdbcTemplate getDatabase2Jdbc() {
+        return database2Jdbc;
     }
 
     @Autowired
-    public void setMultiJDBC2(@Qualifier("multiJDBC2") JdbcTemplate multiJDBC2) {
-        JdbcBeans.multiJDBC2 = multiJDBC2;
+    public void setDatabase2Jdbc(@Qualifier("database2Jdbc") JdbcTemplate database2Jdbc) {
+        JdbcBeans.database2Jdbc = database2Jdbc;
+    }
+
+    private static JdbcTemplate database1Jdbc;
+
+    public static JdbcTemplate getDatabase1Jdbc() {
+        return database1Jdbc;
+    }
+
+    @Autowired
+    public void setDatabase1Jdbc(@Qualifier("database1Jdbc") JdbcTemplate database1Jdbc) {
+        JdbcBeans.database1Jdbc = database1Jdbc;
     }
 
 }
+

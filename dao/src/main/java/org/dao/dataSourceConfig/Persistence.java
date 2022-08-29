@@ -3,16 +3,23 @@ package org.dao.dataSourceConfig;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public enum Persistence {
-    DB1 {
+
+    DATABASE3 {
         @Override
         public JdbcTemplate getValue() {
-            return JdbcBeans.getMultiJDBC1();
+            return JdbcBeans.getDatabase3Jdbc();
         }
     },
-    DB2 {
+    DATABASE2 {
         @Override
         public JdbcTemplate getValue() {
-            return JdbcBeans.getMultiJDBC2();
+            return JdbcBeans.getDatabase2Jdbc();
+        }
+    },
+    DATABASE1 {
+        @Override
+        public JdbcTemplate getValue() {
+            return JdbcBeans.getDatabase1Jdbc();
         }
     };
 
@@ -26,3 +33,4 @@ public enum Persistence {
         this.jdbcTemplate = jdbcTemplate;
     }
 }
+

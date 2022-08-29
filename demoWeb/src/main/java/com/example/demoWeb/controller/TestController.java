@@ -18,7 +18,7 @@ public class TestController {
 
     @RequestMapping("test")
     public List<Map<String, Object>> test() {
-        String sql = "select * from article";
+        String sql = "select * from Stock_Data";
 
 
         return dao.query(sql, null, Persistence.DB1);
